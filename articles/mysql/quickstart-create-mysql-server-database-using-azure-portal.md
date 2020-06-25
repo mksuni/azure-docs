@@ -35,16 +35,16 @@ Follow these steps to create an Azure Database for MySQL server:
 
     **Setting** | **Suggested value** | **Field description** 
     ---|---|---
-    Server name | Unique server name | Enter a unique name that identifies your Azure Database for MySQL server. For example, mydemoserver. The domain name *.mysql.database.azure.com* is appended to the server name you provide. The server name can contain only lowercase letters, numbers, and the hyphen (-) character. It must contain from 3 to 63 characters.
+    Server name | Unique server name | Enter a unique name that identifies your Azure Database for MySQL server. For example, 'mysqldbserver'.The server name can contain only lowercase letters, numbers, and the hyphen (-) character. It must contain from 3 to 63 characters.
     Subscription | Your subscription | Select the Azure subscription that you want to use for your server. If you have multiple subscriptions, choose the subscription in which you get billed for the resource.
-    Resource group | *myresourcegroup* | Provide a new or existing resource group name.
+    Resource group | *myresourcegroup* | Provide a new or existing resource group name. Resource group can be used organize you azure dependencies that belong to single project.
     Select source | *Blank* | Select *Blank* to create a new server from scratch. (You select *Backup* if you are creating a server from a geo-backup of an existing Azure Database for MySQL server).
     Server admin login | myadmin | A sign-in account to use when you're connecting to the server. The admin sign-in name cannot be **azure_superuser**, **admin**, **administrator**, **root**, **guest**, or **public**.
-    Password | *Your choice* | Provide a new password for the server admin account. It must contain from 8 to 128 characters. Your password must contain characters from three of the following categories: English uppercase letters, English lowercase letters, numbers (0-9), and non-alphanumeric characters (!, $, #, %, and so on).
+    Password | *Your choice* | Provide a new password for the server admin account. It must contain from 8 to 128 characters with a combination of uppercase or lowercase letters, numbers, and non-alphanuric characters (!, $, #, %, and so on).
     Confirm password | *Your choice*| Confirm the admin account password.
     Location | *The region closest to your users*| Choose the location that is closest to your users or your other Azure applications.
     Version | *The latest major version*| The latest major version (unless you have specific requirements that require another version).
-    Pricing tier | **General Purpose**, **Gen 5**, **2 vCores**, **5 GB**, **7 days**, **Geographically Redundant** | The compute, storage, and backup configurations for your new server. Select **Pricing tier**. Next, select the **General Purpose** tab. *Gen 5*, *4 vCores*, *100 GB*, and *7 days* are the default values for **Compute Generation**, **vCore**, **Storage**, and **Backup Retention Period**. You can leave those sliders as is. To enable your server backups in geo-redundant storage, select **Geographically Redundant** from the **Backup Redundancy Options**. To save this pricing tier selection, select **OK**. The next screenshot captures these selections. See the [pricing page](https://azure.microsoft.com/pricing/details/mysql/) for more information.
+    Compute + Storage | **General Purpose**, **Gen 5**, **2 vCores**, **5 GB**, **7 days**, **Geographically Redundant** | Click on **Configure server** to modify these compute , storage size and backup retention period. For read/write heavy workloads choose a higher compute (vvcores) and storage size. Price of yourserver depends on the compute, storage configuration and backup retention configuration. We have three pricing tiers : **Basic** , **General Purpose** and **Memory Optimized** and see the [pricing page](https://azure.microsoft.com/pricing/details/mysql/) for more information. .
 
 4. Select **Review + create** to provision the server. Provisioning can take up to 20 minutes.
    
