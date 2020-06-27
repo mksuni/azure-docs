@@ -39,6 +39,11 @@ az account set --subscription <subscription id>
 ```
 
 ## Create an Azure Database for MySQL server
+Create an [Azure resource group](../azure-resource-manager/management/overview.md) using the [az group create](/cli/azure/group) command and then create your PostgreSQL server inside this resource group. You should provide a unique name. The following example creates a resource group named `myresourcegroup` in the `westus` location.
+```azurecli-interactive
+az group create --name myresourcegroup --location westus
+```
+
 Create an Azure Database for MySQL server with the **[az mysql server create](/cli/azure/mysql/server#az-mysql-server-create)** command. At minimum you need to provide resource group , server name , admin username  , admin password and location where you want to provision your server. 
  
 ```azurecli-interactive
@@ -120,7 +125,7 @@ The result is in JSON format. Make a note of the **fullyQualifiedDomainName** an
 ```
 
 ## Connect to the server using the mysql.exe command-line tool
-Connect to your server using the **mysql.exe** command-line tool. Azure Cloud Shell has mysql.exe available to use but you can use a local [mysql.exe](https://dev.mysql.com/downloads/) on your computer.  Run the following command to connect to your sevrer with **mysql.exe**. 
+Connect to your server using the **mysql.exe** command-line tool. Azure Cloud Shell has mysql.exe available to use but you can use a local [mysql.exe](https://dev.mysql.com/downloads/) on your computer.  Run the following command to connect to your server with **mysql.exe**. 
 
    ```bash
    mysql -h mydemoserver.mysql.database.azure.com -u myadmin@mydemoserver -p
